@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+    - name: SourceMedium
+      description: "Subscription Data"
+      schema: raw_data_sandbox
+      tables:
+        - name: subscriptions
+          identifier: acme1_recharge_subscriptions

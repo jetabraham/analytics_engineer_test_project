@@ -1,0 +1,29 @@
+version: 2
+
+models:
+    - name: fact_subscriptions
+      description: "Subscription Data that should provide Daily Granualrty"
+      columns:
+          - name: date
+            description: "Daily Snapshot Date mostly generated from created date(For cancels from cancelled date)"
+            tests:
+                - unique
+                - not_null
+          - name: subscriptions_new
+            description: "- number of new subscriptions created each day — using `created_at.This can include returning customers with a new subscription"
+          - name: subscriptions_returning
+            description: "Number of subscriptions with customers who are returning"
+          - name: subscriptions_active
+            description: "Daily snapshot of the number of active subscriptions each day"
+          - name: subscriptions_cancelled
+            description: "number of subscriptions cancelled each day"
+          - name: subscriptions_churned
+            description: "daily snapshot of the total number of cancelled subscriptions each day"
+          - name: subscribers_new
+            description: "number of new subscribers each day. A new subscriber is when a customer subscribes for the FIRST TIME."
+          - name: subscribers_cancelled
+            description: "number of cancelled subscribers each day. A cancelled subscriber should have NO active subscriptions."
+          - name: subscribers_active
+            description: "daily snapshot of the total number of active subscriber each day. An active subscriber should have AT LEAST ONE active subscriptions."
+          - name: subscribers_churned
+            description: "daily snapshot of the total number of churned subscriber each day. A churned subscriber should have NO active subscriptions."
